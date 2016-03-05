@@ -76,12 +76,12 @@ Soccer::Soccer(QObject *parent) :
     if(refusenew == 1)
     {
         sslrefboxnew = new SSLRefBoxNew(rip, rportn, tcolor, ball_dist, wm);
-//        sslrefboxnew->Start();
+        sslrefboxnew->Start();
     }
     else
     {
         sslrefbox = new SSLRefBox(rip, rport, tcolor, ball_dist, wm);
-//        sslrefbox->Start();
+        sslrefbox->Start();
     }
 
     // manual Referee

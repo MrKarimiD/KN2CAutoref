@@ -41,17 +41,17 @@ enum GameStateType
     STATE_Start = 3,
     STATE_ForceStart= 4, // OK!
 
-    STATE_Kick_off_Our = 5, // OK!
-    STATE_Kick_off_Opp = 6, // OK!
+    STATE_Kick_off_Blue = 5, // OK!
+    STATE_Kick_off_Yellow = 6, // OK!
 
-    STATE_Penalty_Our = 7, // OK!
-    STATE_Penalty_Opp = 8, // OK!
+    STATE_Penalty_Blue = 7, // OK!
+    STATE_Penalty_Yellow = 8, // OK!
 
-    STATE_Free_kick_Our = 9,
-    STATE_Free_kick_Opp = 10,
+    STATE_Free_kick_Blue = 9,
+    STATE_Free_kick_Yellow = 10,
 
-    STATE_Indirect_Free_kick_Our = 11,
-    STATE_Indirect_Free_kick_Opp = 12,
+    STATE_Indirect_Free_kick_Blue = 11,
+    STATE_Indirect_Free_kick_Yellow = 12,
 
 
 };
