@@ -21,7 +21,11 @@ AI::AI(WorldModel *worldmodel, QString field_size, OutputBuffer *outputbuffer, Q
     recordPermission = false;
     logplayer = new AI_logPlayer();
 
+    rS = new refStatus();
+
     playAuto = new PlayAutoReplacement(wm);
+
+    rules.append(new Rule_NumOfPlayers(wm,rS));
 }
 
 void AI::Start()
@@ -94,16 +98,19 @@ void AI::timer_timeout()
 {
     if( firstWait > 5 )
     {
-        //Ready for Auto Replacer
-//        current_play = playAuto;
-//        playAuto->execute();
+        rS->clearStatusOfRules();
+        for(int i = 0;i<rules.size();i++)
+        {
+            Rule* rule = rules.at(i);
+            if( rule->isValid() )
+            {
+                rS->appendRuleStatus(rule->getRuleName(),true);
+                rule->execute();
+            }
+            else
+                rS->appendRuleStatus(rule->getRuleName(),false);
+        }
 
-//        Tactic *tactic = playAuto->getTactic();
-//        RobotCommand rc = tactic->getCommand();
-//        wm->autoReplacer.SendCommand(rc);
-
-        // if( recordPermission )
-        //logplayer->recordLog(wm, RCs);
         fps.Pulse();
     }
     else

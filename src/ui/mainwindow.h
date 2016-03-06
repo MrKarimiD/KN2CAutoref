@@ -23,8 +23,8 @@ private:
     QTimer timer;
     RenderArea *_render;
     Soccer* sc;
-    QString returnRole(AgentRole Role);
-    QString returnStatus(AgentStatus Status);
+    QString returnState(GameStateType gs);
+    QString returnStatus(bool Status);
 
     QString convertTime2String(int time);
     void timelineReset();

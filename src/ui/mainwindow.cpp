@@ -36,90 +36,58 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-QString MainWindow::returnRole(AgentRole Role)
+QString MainWindow::returnState(GameStateType gs)
 {
     QString out;
-    switch (Role) {
-    case AgentRole::ArcLeft :
-        out = "ArcLeft";
+    switch (gs) {
+    case GameStateType::STATE_Halt :
+        out = "Halt";
         break;
-    case AgentRole::ArcRight :
-        out = "ArcRight";
+    case GameStateType::STATE_Stop :
+        out = "Stop";
         break;
-    case AgentRole::ArcMid :
-        out = "ArcMid";
+    case GameStateType::STATE_Start :
+        out = "Start";
         break;
-    case AgentRole::AttackerLeft :
-        out = "AttackerLeft";
+    case GameStateType::STATE_ForceStart :
+        out = "Force Start";
         break;
-    case AgentRole::AttackerMid :
-        out = "AttackerMid";
+    case GameStateType::STATE_Kick_off_Blue :
+        out = "Kickoff for Blue";
         break;
-    case AgentRole::AttackerRight :
-        out = "AttackerRight";
+    case GameStateType::STATE_Kick_off_Yellow :
+        out = "Kickoff for Yellow";
         break;
-    case AgentRole::Blocker :
-        out = "Blocker";
+    case GameStateType::STATE_Penalty_Blue :
+        out = "Penalty for Blue";
         break;
-    case AgentRole::DefenderLeft :
-        out = "DefenderLeft";
+    case GameStateType::STATE_Penalty_Yellow :
+        out = "Penalty for Yellow";
         break;
-    case AgentRole::DefenderMid :
-        out = "DefenderMid";
+    case GameStateType::STATE_Free_kick_Blue :
+        out = "Direct Freekick for Blue";
         break;
-    case AgentRole::DefenderRight :
-        out = "DefenderRight";
+    case GameStateType::STATE_Free_kick_Yellow :
+        out = "Direct Freekick for Yellow";
         break;
-    case AgentRole::FixedPositionLeft :
-        out = "FixedPositionLeft";
+    case GameStateType::STATE_Indirect_Free_kick_Blue :
+        out = "Indirect Freekick for Blue";
         break;
-    case AgentRole::FixedPositionMid :
-        out = "FixedPositionMid";
+    case GameStateType::STATE_Indirect_Free_kick_Yellow :
+        out = "Indirect Freekick for Yellow";
         break;
-    case AgentRole::FixedPositionRight :
-        out = "FixedPositionRight";
-        break;
-    case AgentRole::Golie :
-        out = "Golie";
-        break;
+    case GameStateType::STATE_Null :
     default:
-        out = "Not Set";
+        out = "Null";
     }
     return out;
 }
 
-QString MainWindow::returnStatus(AgentStatus Status)
+QString MainWindow::returnStatus(bool Status)
 {
-    QString out;
-    switch (Status) {
-    case AgentStatus::Idle :
-        out = "Idle";
-        break;
-    case AgentStatus::Passing :
-        out = "Passing";
-        break;
-    case AgentStatus::Kicking :
-        out = "Kicking";
-        break;
-    case AgentStatus::Chiping :
-        out = "Chiping";
-        break;
-    case AgentStatus::FollowingBall :
-        out = "FollowingBall";
-        break;
-    case AgentStatus::BlockingBall :
-        out = "BlockingBall";
-        break;
-    case AgentStatus::RecievingPass :
-        out = "RecievingPass";
-        break;
-    case AgentStatus::BlockingRobot :
-        out = "BlockingRobot";
-        break;
-    default:
-        out = "Not Set";
-    }
-    return out;
+    if( Status )
+        return "Activated";
+    return "Disabled";
 }
 
 QString MainWindow::convertTime2String(int time)
@@ -244,6 +212,94 @@ void MainWindow::timer_timeout()
     QString ball  = QString::number(sc->wm->ball.pos.loc.x,'f',2) + " , " + QString::number(sc->wm->ball.pos.loc.y,'f',2);
     QString ballv = QString::number(sc->wm->ball.vel.loc.x,'f',2) + " , " + QString::number(sc->wm->ball.vel.loc.y,'f',2);
     ball = "( " + ball + " ) , ( " + ballv + " ) ";
+
+    //Rules
+    ui->txtState->setText(returnState(sc->wm->gs));
+
+    int counter = 0, numberOfRules = sc->ai->rS->ruleSize();
+    if( counter < numberOfRules )
+    {
+        ui->txtRule0->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus0->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule1->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus1->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule2->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus2->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule3->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus3->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule4->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus4->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule5->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus5->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule6->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus6->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule7->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus7->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule8->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus8->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule9->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus9->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule10->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus10->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
+
+    if( counter < numberOfRules )
+    {
+        ui->txtRule11->setText(sc->ai->rS->getRuleName(counter));
+        ui->txtStatus11->setText(returnStatus(sc->ai->rS->getRuleStatus(counter)));
+        counter++;
+    }
 
     // WM
     ui->txtWM->setText("");

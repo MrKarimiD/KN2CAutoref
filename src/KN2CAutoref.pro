@@ -159,7 +159,11 @@ SOURCES +=	main.cpp \
     proto/vision_log.pb.cc \
     proto/ref_log.pb.cc \
     ai/play/playautoreplacement.cpp \
-    ai/tactic/tacticautoreplacement.cpp
+    ai/tactic/tacticautoreplacement.cpp \
+    ssl/sslrefbox/refcomhandler.cpp \
+    ai/rule.cpp \
+    ai/rules/rule_numofplayers.cpp \
+    ai/refstatus.cpp
 
 HEADERS  += \
     etc/settings.h \
@@ -252,7 +256,12 @@ HEADERS  += \
     proto/ref_log.pb.h \
     ai/play/playautoreplacement.h \
     ai/tactic/tacticautoreplacement.h \
-    ai/mwbm.h
+    ai/mwbm.h \
+    ssl/sslrefbox/refcomhandler.h \
+    ai/rule.h \
+    ai/rules/rule_numofplayers.h \
+    ai/refstatus.h \
+    ai/rules/rules.h
 
 FORMS    +=	ui/mainwindow.ui
 

@@ -197,6 +197,257 @@
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Rules</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>621</width>
+          <height>560</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_29">
+           <item>
+            <widget class="QLabel" name="label_32">
+             <property name="text">
+              <string>State</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtState"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_30">
+           <item>
+            <widget class="QLabel" name="label_33">
+             <property name="text">
+              <string>R00</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule0"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus0"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_31">
+           <item>
+            <widget class="QLabel" name="label_34">
+             <property name="text">
+              <string>R01</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule1"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus1"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_32">
+           <item>
+            <widget class="QLabel" name="label_35">
+             <property name="text">
+              <string>R02</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule2"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus2"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_33">
+           <item>
+            <widget class="QLabel" name="label_36">
+             <property name="text">
+              <string>R03</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule3"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus3"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_34">
+           <item>
+            <widget class="QLabel" name="label_37">
+             <property name="text">
+              <string>R04</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule4"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus4"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_35">
+           <item>
+            <widget class="QLabel" name="label_38">
+             <property name="text">
+              <string>R05</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule5"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus5"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_36">
+           <item>
+            <widget class="QLabel" name="label_39">
+             <property name="text">
+              <string>R06</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule6"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus6"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_37">
+           <item>
+            <widget class="QLabel" name="label_40">
+             <property name="text">
+              <string>R07</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule7"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus7"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_38">
+           <item>
+            <widget class="QLabel" name="label_41">
+             <property name="text">
+              <string>R08</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule8"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus8"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_39">
+           <item>
+            <widget class="QLabel" name="label_43">
+             <property name="text">
+              <string>R09</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule9"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus9"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_40">
+           <item>
+            <widget class="QLabel" name="label_44">
+             <property name="text">
+              <string>R10</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule10"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus10"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_41">
+           <item>
+            <widget class="QLabel" name="label_45">
+             <property name="text">
+              <string>R11</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtRule11"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txtStatus11"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
       <widget class="QWidget" name="tab_9">
        <attribute name="title">
         <string>Inputs</string>
@@ -773,7 +1024,7 @@
           <x>10</x>
           <y>10</y>
           <width>241</width>
-          <height>229</height>
+          <height>258</height>
          </rect>
         </property>
         <layout class="QFormLayout" name="formLayout">
@@ -847,9 +1098,6 @@
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
-          <widget class="QLineEdit" name="txtgrSim"/>
-         </item>
          <item row="6" column="0">
           <widget class="QLabel" name="label_61">
            <property name="text">
@@ -859,6 +1107,9 @@
          </item>
          <item row="6" column="1">
           <widget class="QLineEdit" name="txtAIfps"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="txtgrSim"/>
          </item>
         </layout>
        </widget>

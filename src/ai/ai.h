@@ -10,6 +10,8 @@
 #include <QUdpSocket>
 #include "logplayer/ai_logplayer.h"
 #include "play/playautoreplacement.h"
+#include "refstatus.h"
+#include "rules/rules.h"
 
 class AI : public QObject
 {
@@ -28,12 +30,15 @@ public:
     int logLength();
     void setLogFrame(int msec);
 
+    refStatus *rS;
+
 public slots:
     void Start();
     void Stop();
 
 private:
     WorldModel *wm;
+
     OutputBuffer *outputbuffer;
     QTimer timer;
     Play *current_play;
@@ -43,6 +48,7 @@ private:
     QHostAddress ip;
     int firstWait;
     bool recordPermission;
+    QList<Rule*> rules;
 
 private slots:
     void timer_timeout();
