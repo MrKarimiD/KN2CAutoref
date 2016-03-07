@@ -119,8 +119,6 @@ SOURCES +=	main.cpp \
     geom/vector_2d.cpp \
     ai/agent.cpp \
     ai/navigation.cpp \
-    ai/play.cpp \
-    ai/tactic.cpp \
     ai/mapsearchnode.cpp \
     ai/knowledge.cpp \
     ssl/sslrefboxnew.cpp \
@@ -130,9 +128,6 @@ SOURCES +=	main.cpp \
     etc/constants.cpp \
     ssl/sslvision_single.cpp \
     ssl/sslvision_double.cpp \
-    ai/skill.cpp \
-    ai/skill/skillkick.cpp \
-    ai/skill/skilltest.cpp \
     ai/learning/hillclimbing.cpp \
     ai/learning/kick_learning.cpp \
     ai/learning/policy.cpp \
@@ -158,8 +153,6 @@ SOURCES +=	main.cpp \
     proto/ssl_log.pb.cc \
     proto/vision_log.pb.cc \
     proto/ref_log.pb.cc \
-    ai/play/playautoreplacement.cpp \
-    ai/tactic/tacticautoreplacement.cpp \
     ssl/sslrefbox/refcomhandler.cpp \
     ai/rule.cpp \
     ai/rules/rule_numofplayers.cpp \
@@ -217,8 +210,6 @@ HEADERS  += \
     ai/agent.h \
     ai/navigation.h \
     output/controller_struct.h \
-    ai/play.h \
-    ai/tactic.h \
     3rdparty/stlastar.h \
     3rdparty/fsa.h \
     ai/mapsearchnode.h \
@@ -228,10 +219,6 @@ HEADERS  += \
     geom/voronoi_diagram.h \
     ssl/sslvision_single.h \
     ssl/sslvision_double.h \
-    ai/skill.h \
-    ai/skill/skillkick.h \
-    ai/Skills.h \
-    ai/skill/skilltest.h \
     ai/learning/hillclimbing.h \
     ai/learning/kick_learning.h \
     ai/learning/policy.h \
@@ -257,8 +244,6 @@ HEADERS  += \
     proto/ssl_log.pb.h \
     proto/vision_log.pb.h \
     proto/ref_log.pb.h \
-    ai/play/playautoreplacement.h \
-    ai/tactic/tacticautoreplacement.h \
     ai/mwbm.h \
     ssl/sslrefbox/refcomhandler.h \
     ai/rule.h \

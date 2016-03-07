@@ -10,20 +10,11 @@ AI::AI(WorldModel *worldmodel, QString field_size, OutputBuffer *outputbuffer, Q
 
     Field::setup_consts(field_size);
 
-    udp = new QUdpSocket();
-    ip.setAddress("192.168.4.113");
-
-    current_play = 0;
-    for(int i=0; i<PLAYERS_MAX_NUM; i++)
-        current_tactic[i] = 0;
-
     firstWait = 0;
     recordPermission = false;
     logplayer = new AI_logPlayer();
 
     rS = new refStatus();
-
-    playAuto = new PlayAutoReplacement(wm);
 
     rules.append(new Rule_NumOfPlayers(wm,rS));
     rules.append(new Rule_StopDistance(wm,rS));
@@ -40,16 +31,6 @@ void AI::Stop()
 {
     qDebug() << "AI::Stop";
     timer.stop();
-}
-
-Play* AI::getCurrentPlay()
-{
-    return current_play;
-}
-
-Tactic* AI::getCurrentTactic(int i)
-{
-    return current_tactic[i];
 }
 
 void AI::startRecording()
