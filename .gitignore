@@ -1,34 +1,21 @@
-# C++ objects and libs
-
+# Compiled Object files
 *.slo
 *.lo
 *.o
-*.a
-*.la
-*.lai
+
+# Compiled Dynamic libraries
 *.so
-*.dll
 *.dylib
 
-# Qt-es
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.dll
+*.exe
 
-/.qmake.cache
-/.qmake.stash
 *.pro.user
-*.pro.user.*
-*.qbs.user
-*.qbs.user.*
-*.moc
-moc_*.cpp
-qrc_*.cpp
-ui_*.h
-Makefile*
-*build-*
-
-# QtCreator
-
-*.autosave
-
-#QtCtreator Qml
-*.qmlproject.user
-*.qmlproject.user.*
+build-KN2CSSL-*
+tmp/*
+build-*
+bin/*
