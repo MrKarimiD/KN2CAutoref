@@ -1,9 +1,8 @@
 #include "ai.h"
 
-AI::AI(WorldModel *worldmodel, QString field_size, OutputBuffer *outputbuffer, QObject *parent) :
+AI::AI(WorldModel *worldmodel, QString field_size, QObject *parent) :
     QObject(parent),
-    wm(worldmodel),
-    outputbuffer(outputbuffer)
+    wm(worldmodel)
 {
     qDebug() << "AI Initialization...";
     connect(&timer, SIGNAL(timeout()), this, SLOT(timer_timeout()));

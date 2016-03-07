@@ -2,8 +2,6 @@
 #define ROBOT_H
 
 #include "mobileobject.h"
-#include "controller.h"
-#include "outputbuffer.h"
 #include "QDebug"
 
 class Robot : public MobileObject

@@ -43,7 +43,6 @@ public:
 
     bool CanKick(Position robotPos, Vector2D ballPos);
     bool IsReadyForKick(Position current, Position desired, Vector2D ballPos);
-    Position AdjustKickPoint(Vector2D ballPos, Vector2D target, int kickSpeed = 5);
 
     Vector2D PredictDestination(Vector2D sourcePos, Vector2D targetPos, double sourceSpeed, Vector2D targetSpeed);
     bool ReachedToPos(Position current, Position desired, double distThreshold, double degThreshold);

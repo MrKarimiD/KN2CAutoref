@@ -15,7 +15,7 @@ public:
     virtual bool loadLog();
     bool loadLog(SSL_log logs);
     SSL_log saveLog();
-    void recordLog(WorldModel* wm, QList<RobotCommand> RCs);
+    void recordLog(WorldModel* wm);
     void pauseLog();
     void restartTime();
     WorldModel* returnCurrentPacket();
@@ -23,14 +23,14 @@ public:
 
     virtual void setFrameNumber(int msec);
 
-    Robot_message_AgentStatus returnProtoStatus(AgentStatus status);
-    AgentStatus returnAgentStatus(Robot_message_AgentStatus status);
+//    Robot_message_AgentStatus returnProtoStatus(AgentStatus status);
+//    AgentStatus returnAgentStatus(Robot_message_AgentStatus status);
 
-    Robot_message_AgentRole returnProtoRole(AgentRole role);
-    AgentRole returnAgentRole(Robot_message_AgentRole role);
+//    Robot_message_AgentRole returnProtoRole(AgentRole role);
+//    AgentRole returnAgentRole(Robot_message_AgentRole role);
 
-    Robot_message_AgentRegion returnProtoRegion(AgentRegion region);
-    AgentRegion returnAgentRegion(Robot_message_AgentRegion region);
+//    Robot_message_AgentRegion returnProtoRegion(AgentRegion region);
+//    AgentRegion returnAgentRegion(Robot_message_AgentRegion region);
 
 public slots:
     void timerShot();

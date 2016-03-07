@@ -50,7 +50,7 @@ MOC_DIR = ../tmp/.moc
 RCC_DIR = ../tmp/.rcc
 UI_DIR = ../tmp/.ui
 
-unix:  LIBS += -lprotobuf -L/usr/local/lib -ligraph -L/usr/include/ -lCGAL -lgmp -lmpfr
+unix:  LIBS += -lprotobuf -L/usr/local/lib -ligraph
 
 #win32
 #{
@@ -93,15 +93,10 @@ SOURCES +=	main.cpp \
     util/fpscounter.cpp \
     ai/soccer.cpp \
     ssl/worldmodel.cpp \
-    output/wpacket.cpp \
-    output/transmitter.cpp \
-    output/grsim.cpp \
-    output/grpacket.cpp \
     ssl/sslrefbox/game_state.cpp \
     ssl/mobileobject.cpp \
     ssl/ball.cpp \
     ssl/robot.cpp \
-    output/controller.cpp \
     ai/ai.cpp \
     geom/angle_deg.cpp \
     geom/circle_2d.cpp \
@@ -117,14 +112,10 @@ SOURCES +=	main.cpp \
     geom/segment_2d.cpp \
     geom/triangle_2d.cpp \
     geom/vector_2d.cpp \
-    ai/agent.cpp \
-    ai/navigation.cpp \
-    ai/mapsearchnode.cpp \
     ai/knowledge.cpp \
     ssl/sslrefboxnew.cpp \
     geom2/shape2d.cpp \
     ai/mwbm.cpp \
-    geom/voronoi_diagram.cpp \
     etc/constants.cpp \
     ssl/sslvision_single.cpp \
     ssl/sslvision_double.cpp \
@@ -176,18 +167,11 @@ HEADERS  += \
     ui/renderarea.h \
     util/util.h \
     util/fpscounter.h \
-    output/wpacket.h \
-    output/transmitter.h \
-    output/grsim.h \
-    output/outputbuffer.h \
-    output/grpacket.h \
     ssl/mobileobject.h \
     ssl/ball.h \
     ssl/robot.h \
-    output/controller.h \
     ssl/position.h \
     ai/ai.h \
-    ai/robotcommand.h \
     geom/angle_deg.h \
     geom/circle_2d.h \
     geom/composite_region_2d.h \
@@ -207,16 +191,11 @@ HEADERS  += \
     geom/vector_2d.h \
     geom/geom.h \
     ai/soccer.h \
-    ai/agent.h \
-    ai/navigation.h \
-    output/controller_struct.h \
     3rdparty/stlastar.h \
     3rdparty/fsa.h \
-    ai/mapsearchnode.h \
     ai/knowledge.h \
     ssl/sslrefboxnew.h \
     geom2/shape2d.h \
-    geom/voronoi_diagram.h \
     ssl/sslvision_single.h \
     ssl/sslvision_double.h \
     ai/learning/hillclimbing.h \

@@ -2,7 +2,7 @@
 
 double WorldModel::var[10];
 
-WorldModel::WorldModel(OutputBuffer *outputBuffer)
+WorldModel::WorldModel()
 {
     time = 0;
     ref_goalie_our = 0;

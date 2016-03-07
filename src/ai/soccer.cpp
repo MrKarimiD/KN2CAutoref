@@ -46,20 +46,12 @@ Soccer::Soccer(QObject *parent) :
     int simport = s.Get("grSim", "CommandPort").toInt();
     log += "grSim CommandPort : " + QString::number(simport) + "\n\n";
 
-    QString serialport = s.Get("Transmitter","SerialPort");
-    log += "SerialPort : " + serialport + "\n\n";
-
-
     // Game mode
     gamemode = (gm=="Simulation")?MODE_SIMULATION:MODE_REAL;
     qDebug() << "Game mode: " << gm << "\n";
 
-    // output buffer
-    outputbuffer = new OutputBuffer;
-
     // Vison & referee
-    wm = new WorldModel(outputbuffer);
-    MapSearchNode::wm = wm;
+    wm = new WorldModel();
     if( field == "Double" )
         sslvision = new SSLVision_Double(vip, vport, tcolor, tside, tcam, wm);
     else
@@ -102,13 +94,13 @@ Soccer::Soccer(QObject *parent) :
         {
             sslrefboxnew2 = new SSLRefBoxNew(mrip, mrportn, tcolor, ball_dist, wm);
             sslrefboxnew2->paused = true;
-//            sslrefboxnew2->Start();
+            //            sslrefboxnew2->Start();
         }
         else
         {
             sslrefbox2 = new SSLRefBox(mrip, mrport, tcolor, ball_dist, wm);
             sslrefbox2->paused = true;
-//            sslrefbox2->Start();
+            //            sslrefbox2->Start();
         }
     }
     else
@@ -116,32 +108,19 @@ Soccer::Soccer(QObject *parent) :
         log += "ManualRef Disabled \n";
     }
 
-    // grSim
-    grsim = 0;
     if(gamemode==MODE_SIMULATION)
-    {
-        grsim = new grSim(simip, simport, tcolor, outputbuffer);
-        grsim->Start();
         wm->isSim = true;
-    }
-
-    // serial port transmitter
-    transmitter = 0;
-    if(gamemode==MODE_REAL)
-    {
-        transmitter = new Transmitter(serialport, outputbuffer, wm);
-        transmitter->Start();
+    else if(gamemode==MODE_REAL)
         wm->isSim = false;
-    }
 
     // AI
-    ai = new AI(wm, field,outputbuffer, this);
+    ai = new AI(wm, field, this);
     ai->Start();
 }
 
 void Soccer::recordGameLog()
 {
-    sslvision->startRecording(); 
+    sslvision->startRecording();
     sslrefboxnew->startRecording();
     ai->startRecording();
 }
@@ -275,6 +254,6 @@ int Soccer::logLength()
 void Soccer::setLogFrame(int msec)
 {
     sslvision->setLogFrame(msec);
-//    ai->setLogFrame(msec);
+    //    ai->setLogFrame(msec);
     sslrefboxnew->setLogFrame(msec);
 }

@@ -48,7 +48,7 @@ SSL_log AI_logPlayer::saveLog()
     return logs;
 }
 
-void AI_logPlayer::recordLog(WorldModel *wm, QList<RobotCommand> RCs)
+void AI_logPlayer::recordLog(WorldModel *wm)
 {
     log_chunk data_chunk;
 
@@ -111,7 +111,7 @@ void AI_logPlayer::pauseLog()
 
 WorldModel *AI_logPlayer::returnCurrentPacket()
 {
-    WorldModel *wm = new WorldModel(new OutputBuffer());
+    WorldModel *wm = new WorldModel();
 
     wm->ball.isValid = current_chunk.ball().isvalid();
     wm->ball.pos.loc.x = current_chunk.ball().position().x();
@@ -169,209 +169,209 @@ void AI_logPlayer::setFrameNumber(int msec)
     }
 }
 
-Robot_message_AgentStatus AI_logPlayer::returnProtoStatus(AgentStatus status)
-{
-    switch (status)
-    {
-    case AgentStatus::Passing:
-        return Robot_message_AgentStatus_Passing;
-        break;
-    case AgentStatus::Kicking:
-        return Robot_message_AgentStatus_Kicking;
-        break;
-    case AgentStatus::Chiping:
-        return Robot_message_AgentStatus_Chiping;
-        break;
-    case AgentStatus::FollowingBall:
-        return Robot_message_AgentStatus_FollowingBall;
-        break;
-    case AgentStatus::BlockingBall:
-        return Robot_message_AgentStatus_BlockingBall;
-        break;
-    case AgentStatus::BlockingRobot:
-        return Robot_message_AgentStatus_BlockingRobot;
-        break;
-    case AgentStatus::RecievingPass:
-        return Robot_message_AgentStatus_RecievingPass;
-        break;
-    default:
-        return Robot_message_AgentStatus_Idle;
-        break;
-    }
-}
+//Robot_message_AgentStatus AI_logPlayer::returnProtoStatus(AgentStatus status)
+//{
+//    switch (status)
+//    {
+//    case AgentStatus::Passing:
+//        return Robot_message_AgentStatus_Passing;
+//        break;
+//    case AgentStatus::Kicking:
+//        return Robot_message_AgentStatus_Kicking;
+//        break;
+//    case AgentStatus::Chiping:
+//        return Robot_message_AgentStatus_Chiping;
+//        break;
+//    case AgentStatus::FollowingBall:
+//        return Robot_message_AgentStatus_FollowingBall;
+//        break;
+//    case AgentStatus::BlockingBall:
+//        return Robot_message_AgentStatus_BlockingBall;
+//        break;
+//    case AgentStatus::BlockingRobot:
+//        return Robot_message_AgentStatus_BlockingRobot;
+//        break;
+//    case AgentStatus::RecievingPass:
+//        return Robot_message_AgentStatus_RecievingPass;
+//        break;
+//    default:
+//        return Robot_message_AgentStatus_Idle;
+//        break;
+//    }
+//}
 
-AgentStatus AI_logPlayer::returnAgentStatus(Robot_message_AgentStatus status)
-{
-    switch (status)
-    {
-    case Robot_message_AgentStatus_Passing:
-        return AgentStatus::Passing;
-        break;
-    case Robot_message_AgentStatus_Kicking:
-        return AgentStatus::Kicking;
-        break;
-    case Robot_message_AgentStatus_Chiping:
-        return AgentStatus::Chiping;
-        break;
-    case Robot_message_AgentStatus_FollowingBall:
-        return AgentStatus::FollowingBall;
-        break;
-    case Robot_message_AgentStatus_BlockingBall:
-        return AgentStatus::BlockingBall;
-        break;
-    case Robot_message_AgentStatus_BlockingRobot:
-        return AgentStatus::BlockingRobot;
-        break;
-    case Robot_message_AgentStatus_RecievingPass:
-        return AgentStatus::RecievingPass;
-        break;
-    default:
-        return AgentStatus::Idle;
-        break;
-    }
-}
+//AgentStatus AI_logPlayer::returnAgentStatus(Robot_message_AgentStatus status)
+//{
+//    switch (status)
+//    {
+//    case Robot_message_AgentStatus_Passing:
+//        return AgentStatus::Passing;
+//        break;
+//    case Robot_message_AgentStatus_Kicking:
+//        return AgentStatus::Kicking;
+//        break;
+//    case Robot_message_AgentStatus_Chiping:
+//        return AgentStatus::Chiping;
+//        break;
+//    case Robot_message_AgentStatus_FollowingBall:
+//        return AgentStatus::FollowingBall;
+//        break;
+//    case Robot_message_AgentStatus_BlockingBall:
+//        return AgentStatus::BlockingBall;
+//        break;
+//    case Robot_message_AgentStatus_BlockingRobot:
+//        return AgentStatus::BlockingRobot;
+//        break;
+//    case Robot_message_AgentStatus_RecievingPass:
+//        return AgentStatus::RecievingPass;
+//        break;
+//    default:
+//        return AgentStatus::Idle;
+//        break;
+//    }
+//}
 
-Robot_message_AgentRole AI_logPlayer::returnProtoRole(AgentRole role)
-{
-    switch (role)
-    {
-    case AgentRole::ArcMid:
-        return Robot_message_AgentRole_ArcMid;
-        break;
-    case AgentRole::ArcLeft:
-        return Robot_message_AgentRole_ArcLeft;
-        break;
-    case AgentRole::ArcRight:
-        return Robot_message_AgentRole_ArcRight;
-        break;
-    case AgentRole::FixedPositionLeft:
-        return Robot_message_AgentRole_FixedPositionLeft;
-        break;
-    case AgentRole::FixedPositionRight:
-        return Robot_message_AgentRole_FixedPositionRight;
-        break;
-    case AgentRole::FixedPositionMid:
-        return Robot_message_AgentRole_FixedPositionMid;
-        break;
-    case AgentRole::AttackerLeft:
-        return Robot_message_AgentRole_AttackerLeft;
-        break;
-    case AgentRole::AttackerRight:
-        return Robot_message_AgentRole_AttackerRight;
-        break;
-    case AgentRole::AttackerMid:
-        return Robot_message_AgentRole_AttackerMid;
-        break;
-    case AgentRole::Blocker:
-        return Robot_message_AgentRole_Blocker;
-        break;
-    case AgentRole::DefenderLeft:
-        return Robot_message_AgentRole_DefenderLeft;
-        break;
-    case AgentRole::DefenderRight:
-        return Robot_message_AgentRole_DefenderRight;
-        break;
-    case AgentRole::DefenderMid:
-        return Robot_message_AgentRole_DefenderMid;
-        break;
-    case AgentRole::Golie:
-        return Robot_message_AgentRole_Golie;
-        break;
-    default:
-        return Robot_message_AgentRole_NoRole;
-        break;
-    }
-}
+//Robot_message_AgentRole AI_logPlayer::returnProtoRole(AgentRole role)
+//{
+//    switch (role)
+//    {
+//    case AgentRole::ArcMid:
+//        return Robot_message_AgentRole_ArcMid;
+//        break;
+//    case AgentRole::ArcLeft:
+//        return Robot_message_AgentRole_ArcLeft;
+//        break;
+//    case AgentRole::ArcRight:
+//        return Robot_message_AgentRole_ArcRight;
+//        break;
+//    case AgentRole::FixedPositionLeft:
+//        return Robot_message_AgentRole_FixedPositionLeft;
+//        break;
+//    case AgentRole::FixedPositionRight:
+//        return Robot_message_AgentRole_FixedPositionRight;
+//        break;
+//    case AgentRole::FixedPositionMid:
+//        return Robot_message_AgentRole_FixedPositionMid;
+//        break;
+//    case AgentRole::AttackerLeft:
+//        return Robot_message_AgentRole_AttackerLeft;
+//        break;
+//    case AgentRole::AttackerRight:
+//        return Robot_message_AgentRole_AttackerRight;
+//        break;
+//    case AgentRole::AttackerMid:
+//        return Robot_message_AgentRole_AttackerMid;
+//        break;
+//    case AgentRole::Blocker:
+//        return Robot_message_AgentRole_Blocker;
+//        break;
+//    case AgentRole::DefenderLeft:
+//        return Robot_message_AgentRole_DefenderLeft;
+//        break;
+//    case AgentRole::DefenderRight:
+//        return Robot_message_AgentRole_DefenderRight;
+//        break;
+//    case AgentRole::DefenderMid:
+//        return Robot_message_AgentRole_DefenderMid;
+//        break;
+//    case AgentRole::Golie:
+//        return Robot_message_AgentRole_Golie;
+//        break;
+//    default:
+//        return Robot_message_AgentRole_NoRole;
+//        break;
+//    }
+//}
 
-AgentRole AI_logPlayer::returnAgentRole(Robot_message_AgentRole role)
-{
-    switch (role)
-    {
-    case Robot_message_AgentRole_ArcMid:
-        return AgentRole::ArcMid;
-        break;
-    case Robot_message_AgentRole_ArcLeft:
-        return AgentRole::ArcLeft;
-        break;
-    case Robot_message_AgentRole_ArcRight:
-        return AgentRole::ArcRight;
-        break;
-    case Robot_message_AgentRole_FixedPositionLeft:
-        return AgentRole::FixedPositionLeft;
-        break;
-    case Robot_message_AgentRole_FixedPositionRight:
-        return AgentRole::FixedPositionRight;
-        break;
-    case Robot_message_AgentRole_FixedPositionMid:
-        return AgentRole::FixedPositionMid;
-        break;
-    case Robot_message_AgentRole_AttackerLeft:
-        return AgentRole::AttackerLeft;
-        break;
-    case Robot_message_AgentRole_AttackerRight:
-        return AgentRole::AttackerRight;
-        break;
-    case Robot_message_AgentRole_AttackerMid:
-        return AgentRole::AttackerMid;
-        break;
-    case Robot_message_AgentRole_Blocker:
-        return AgentRole::Blocker;
-        break;
-    case Robot_message_AgentRole_DefenderLeft:
-        return AgentRole::DefenderLeft;
-        break;
-    case Robot_message_AgentRole_DefenderRight:
-        return AgentRole::DefenderRight;
-        break;
-    case Robot_message_AgentRole_DefenderMid:
-        return AgentRole::DefenderMid;
-        break;
-    case Robot_message_AgentRole_Golie:
-        return AgentRole::Golie;
-        break;
-    default:
-        return AgentRole::NoRole;
-        break;
-    }
-}
+//AgentRole AI_logPlayer::returnAgentRole(Robot_message_AgentRole role)
+//{
+//    switch (role)
+//    {
+//    case Robot_message_AgentRole_ArcMid:
+//        return AgentRole::ArcMid;
+//        break;
+//    case Robot_message_AgentRole_ArcLeft:
+//        return AgentRole::ArcLeft;
+//        break;
+//    case Robot_message_AgentRole_ArcRight:
+//        return AgentRole::ArcRight;
+//        break;
+//    case Robot_message_AgentRole_FixedPositionLeft:
+//        return AgentRole::FixedPositionLeft;
+//        break;
+//    case Robot_message_AgentRole_FixedPositionRight:
+//        return AgentRole::FixedPositionRight;
+//        break;
+//    case Robot_message_AgentRole_FixedPositionMid:
+//        return AgentRole::FixedPositionMid;
+//        break;
+//    case Robot_message_AgentRole_AttackerLeft:
+//        return AgentRole::AttackerLeft;
+//        break;
+//    case Robot_message_AgentRole_AttackerRight:
+//        return AgentRole::AttackerRight;
+//        break;
+//    case Robot_message_AgentRole_AttackerMid:
+//        return AgentRole::AttackerMid;
+//        break;
+//    case Robot_message_AgentRole_Blocker:
+//        return AgentRole::Blocker;
+//        break;
+//    case Robot_message_AgentRole_DefenderLeft:
+//        return AgentRole::DefenderLeft;
+//        break;
+//    case Robot_message_AgentRole_DefenderRight:
+//        return AgentRole::DefenderRight;
+//        break;
+//    case Robot_message_AgentRole_DefenderMid:
+//        return AgentRole::DefenderMid;
+//        break;
+//    case Robot_message_AgentRole_Golie:
+//        return AgentRole::Golie;
+//        break;
+//    default:
+//        return AgentRole::NoRole;
+//        break;
+//    }
+//}
 
-Robot_message_AgentRegion AI_logPlayer::returnProtoRegion(AgentRegion region)
-{
-    switch (region)
-    {
-    case AgentRegion::Left:
-        return Robot_message_AgentRegion_Left;
-        break;
-    case AgentRegion::Center:
-        return Robot_message_AgentRegion_Center;
-        break;
-    case AgentRegion::Right:
-        return Robot_message_AgentRegion_Right;
-        break;
-    default:
-        return Robot_message_AgentRegion_NoRegion;
-        break;
-    }
-}
+//Robot_message_AgentRegion AI_logPlayer::returnProtoRegion(AgentRegion region)
+//{
+//    switch (region)
+//    {
+//    case AgentRegion::Left:
+//        return Robot_message_AgentRegion_Left;
+//        break;
+//    case AgentRegion::Center:
+//        return Robot_message_AgentRegion_Center;
+//        break;
+//    case AgentRegion::Right:
+//        return Robot_message_AgentRegion_Right;
+//        break;
+//    default:
+//        return Robot_message_AgentRegion_NoRegion;
+//        break;
+//    }
+//}
 
-AgentRegion AI_logPlayer::returnAgentRegion(Robot_message_AgentRegion region)
-{
-    switch (region)
-    {
-    case Robot_message_AgentRegion_Left:
-        return AgentRegion::Left;
-        break;
-    case Robot_message_AgentRegion_Center:
-        return AgentRegion::Center;
-        break;
-    case Robot_message_AgentRegion_Right:
-        return AgentRegion::Right;
-        break;
-    default:
-        return AgentRegion::NoRegion;
-        break;
-    }
-}
+//AgentRegion AI_logPlayer::returnAgentRegion(Robot_message_AgentRegion region)
+//{
+//    switch (region)
+//    {
+//    case Robot_message_AgentRegion_Left:
+//        return AgentRegion::Left;
+//        break;
+//    case Robot_message_AgentRegion_Center:
+//        return AgentRegion::Center;
+//        break;
+//    case Robot_message_AgentRegion_Right:
+//        return AgentRegion::Right;
+//        break;
+//    default:
+//        return AgentRegion::NoRegion;
+//        break;
+//    }
+//}
 
 void AI_logPlayer::timerShot()
 {

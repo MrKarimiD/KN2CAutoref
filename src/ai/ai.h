@@ -4,7 +4,6 @@
 #include <QtCore>
 #include <QObject>
 #include "constants.h"
-#include "outputbuffer.h"
 #include "fpscounter.h"
 #include "logplayer/ai_logplayer.h"
 #include "refstatus.h"
@@ -14,7 +13,7 @@ class AI : public QObject
 {
     Q_OBJECT
 public:
-    explicit AI(WorldModel* worldmodel, QString field_size, OutputBuffer* outputbuffer, QObject *parent = 0);
+    explicit AI(WorldModel* worldmodel, QString field_size, QObject *parent = 0);
     FPSCounter fps;
     void startRecording();
     SSL_log stopRecording();
@@ -34,7 +33,6 @@ public slots:
 private:
     WorldModel *wm;
 
-    OutputBuffer *outputbuffer;
     QTimer timer;
     AI_logPlayer *logplayer;
     int firstWait;

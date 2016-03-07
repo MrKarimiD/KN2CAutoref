@@ -9,18 +9,14 @@
 #include <QMap>
 
 #include "settings.h"
-#include "transmitter.h"
 #include "worldmodel.h"
 #include "sslrefbox.h"
 #include "sslrefboxnew.h"
 #include "sslvision_single.h"
 #include "sslvision_double.h"
-#include "wpacket.h"
-#include "grsim.h"
-#include "outputbuffer.h"
 #include "ai.h"
-#include "mapsearchnode.h"
 #include "proto/log.pb.h"
+#include "fstream"
 
 class Soccer : public QObject
 {
@@ -50,9 +46,6 @@ public:
     SSLRefBox* sslrefbox2;
     SSLRefBoxNew* sslrefboxnew2;
 
-    OutputBuffer* outputbuffer;
-    Transmitter* transmitter;
-    grSim* grsim;
     AI *ai;
     QString field;
 

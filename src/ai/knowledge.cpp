@@ -458,16 +458,3 @@ bool Knowledge::ReachedToPos(Position current, Position desired, double distThre
         return false;
     }
 }
-
-Position Knowledge::AdjustKickPoint(Vector2D ballPos, Vector2D target, int kickSpeed)
-{
-    Position p;
-    Vector2D dir = (ballPos - target);//.normalizedVector();
-    dir.setLength( ROBOT_RADIUS);
-
-    p.loc = ballPos + dir;
-    p.dir = (-dir).dir().radian();
-
-
-    return p;
-}
