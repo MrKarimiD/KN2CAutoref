@@ -188,24 +188,24 @@ void MainWindow::timer_timeout()
     ui->txtcmgs_6->setText(QString("theirRestart : ") + (sc->wm->cmgs.theirRestart()?"1":"0"));
 
     ui->txtcmgs_7->setText(QString("kickoff : ") + (sc->wm->cmgs.kickoff()?"1":"0"));
-    ui->txtcmgs_8->setText(QString("ourKickoff : ") + (sc->wm->cmgs.ourKickoff()?"1":"0"));
-    ui->txtcmgs_9->setText(QString("theirKickoff : ") + (sc->wm->cmgs.theirKickoff()?"1":"0"));
+    ui->txtcmgs_8->setText(QString("Blue Kickoff : ") + (sc->wm->cmgs.blueKickoff()?"1":"0"));
+    ui->txtcmgs_9->setText(QString("Yellow Kickoff : ") + (sc->wm->cmgs.yellowKickoff()?"1":"0"));
 
     ui->txtcmgs_10->setText(QString("penaltyKick : ") + (sc->wm->cmgs.penaltyKick()?"1":"0"));
-    ui->txtcmgs_11->setText(QString("ourPenaltyKick : ") + (sc->wm->cmgs.ourPenaltyKick()?"1":"0"));
-    ui->txtcmgs_12->setText(QString("theirPenaltyKick : ") + (sc->wm->cmgs.theirPenaltyKick()?"1":"0"));
+    ui->txtcmgs_11->setText(QString("Blue PenaltyKick : ") + (sc->wm->cmgs.bluePenaltyKick()?"1":"0"));
+    ui->txtcmgs_12->setText(QString("Yellow PenaltyKick : ") + (sc->wm->cmgs.yellowPenaltyKick()?"1":"0"));
 
     ui->txtcmgs_13->setText(QString("directKick : ") + (sc->wm->cmgs.directKick()?"1":"0"));
-    ui->txtcmgs_14->setText(QString("ourDirectKick : ") + (sc->wm->cmgs.ourDirectKick()?"1":"0"));
-    ui->txtcmgs_15->setText(QString("theirDirectKick : ") + (sc->wm->cmgs.theirDirectKick()?"1":"0"));
+    ui->txtcmgs_14->setText(QString("blue DirectKick : ") + (sc->wm->cmgs.blueDirectKick()?"1":"0"));
+    ui->txtcmgs_15->setText(QString("yellow DirectKick : ") + (sc->wm->cmgs.yellowDirectKick()?"1":"0"));
 
     ui->txtcmgs_16->setText(QString("indirectKick : ") + (sc->wm->cmgs.indirectKick()?"1":"0"));
-    ui->txtcmgs_17->setText(QString("ourIndirectKick : ") + (sc->wm->cmgs.ourIndirectKick()?"1":"0"));
-    ui->txtcmgs_18->setText(QString("theirIndirectKick : ") + (sc->wm->cmgs.theirIndirectKick()?"1":"0"));
+    ui->txtcmgs_17->setText(QString("Blue IndirectKick : ") + (sc->wm->cmgs.blueIndirectKick()?"1":"0"));
+    ui->txtcmgs_18->setText(QString("Yellow IndirectKick : ") + (sc->wm->cmgs.yellowIndirectKick()?"1":"0"));
 
     ui->txtcmgs_19->setText(QString("freeKick : ") + (sc->wm->cmgs.freeKick()?"1":"0"));
-    ui->txtcmgs_20->setText(QString("ourFreeKick : ") + (sc->wm->cmgs.ourFreeKick()?"1":"0"));
-    ui->txtcmgs_21->setText(QString("theiFreeKick : ") + (sc->wm->cmgs.theirFreeKick()?"1":"0"));
+    ui->txtcmgs_20->setText(QString("Blue FreeKick : ") + (sc->wm->cmgs.blueFreeKick()?"1":"0"));
+    ui->txtcmgs_21->setText(QString("Yellow FreeKick : ") + (sc->wm->cmgs.yellowFreeKick()?"1":"0"));
 
     ui->txtcmgs_22->setText(QString("canMove : ") + (sc->wm->cmgs.canMove()?"1":"0"));
 

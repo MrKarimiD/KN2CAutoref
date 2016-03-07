@@ -128,24 +128,24 @@ public:
   bool theirRestart() { return restart() && ! (state & color); }
 
   bool kickoff() { return (state & KICKOFF); }
-  bool ourKickoff() { return kickoff() && (state & color); }
-  bool theirKickoff() { return kickoff() && ! (state & color); }
+  bool blueKickoff() { return kickoff() && (state & color); }
+  bool yellowKickoff() { return kickoff() && ! (state & color); }
 
   bool penaltyKick() { return (state & PENALTY); }
-  bool ourPenaltyKick() { return penaltyKick() && (state & color); }
-  bool theirPenaltyKick() { return penaltyKick() && ! (state & color); }
+  bool bluePenaltyKick() { return penaltyKick() && (state & color); }
+  bool yellowPenaltyKick() { return penaltyKick() && ! (state & color); }
 
   bool directKick() { return (state & DIRECT); }
-  bool ourDirectKick() { return directKick() && (state & color); }
-  bool theirDirectKick() { return directKick() && ! (state & color); }
+  bool blueDirectKick() { return directKick() && (state & color); }
+  bool yellowDirectKick() { return directKick() && ! (state & color); }
 
   bool indirectKick() { return (state & INDIRECT); }
-  bool ourIndirectKick() { return indirectKick() && (state & color); }
-  bool theirIndirectKick() { return indirectKick() && ! (state & color); }
+  bool blueIndirectKick() { return indirectKick() && (state & color); }
+  bool yellowIndirectKick() { return indirectKick() && ! (state & color); }
 
   bool freeKick() { return directKick() || indirectKick(); }
-  bool ourFreeKick() { return ourDirectKick() || ourIndirectKick(); }
-  bool theirFreeKick() { return theirDirectKick() || theirIndirectKick(); }
+  bool blueFreeKick() { return blueDirectKick() || blueIndirectKick(); }
+  bool yellowFreeKick() { return yellowDirectKick() || yellowIndirectKick(); }
 
   bool canMove() { return (state != HALTED); }
 

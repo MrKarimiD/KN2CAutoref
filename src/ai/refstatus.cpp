@@ -64,3 +64,18 @@ bool refStatus::get_InValidDist(TeamColorType color)
     return this->yellowInValidDist;
 }
 
+void refStatus::set_FreekickValidDist(TeamColorType color, bool input)
+{
+    if( color == COLOR_BLUE )
+        this->blue_FreekickValidDist = input;
+    else
+        this->yellow_FreekickValidDist = input;
+}
+
+bool refStatus::get_FreekickValidDist(TeamColorType color)
+{
+    if( color == COLOR_BLUE )
+        return this->blue_FreekickValidDist;
+    return this->yellow_FreekickValidDist;
+}
+

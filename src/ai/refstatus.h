@@ -33,6 +33,9 @@ public:
     void set_InValidDist(TeamColorType color, bool input);
     bool get_InValidDist(TeamColorType color);
 
+    void set_FreekickValidDist(TeamColorType color, bool input);
+    bool get_FreekickValidDist(TeamColorType color);
+
 signals:
 
 public slots:
@@ -43,6 +46,9 @@ private:
 
     bool blueInValidDist;
     bool yellowInValidDist;
+
+    bool blue_FreekickValidDist;
+    bool yellow_FreekickValidDist;
 
     QList<rule_status> statusOfRules;
 
