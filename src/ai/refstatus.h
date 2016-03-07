@@ -30,6 +30,9 @@ public:
     QString getRuleName(int id);
     bool getRuleStatus(int id);
 
+    void set_InValidDist(TeamColorType color, bool input);
+    bool get_InValidDist(TeamColorType color);
+
 signals:
 
 public slots:
@@ -37,6 +40,9 @@ public slots:
 private:
     playerNum blueNum;
     playerNum yellowNum;
+
+    bool blueInValidDist;
+    bool yellowInValidDist;
 
     QList<rule_status> statusOfRules;
 

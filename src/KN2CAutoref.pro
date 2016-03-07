@@ -163,7 +163,10 @@ SOURCES +=	main.cpp \
     ssl/sslrefbox/refcomhandler.cpp \
     ai/rule.cpp \
     ai/rules/rule_numofplayers.cpp \
-    ai/refstatus.cpp
+    ai/refstatus.cpp \
+    ai/rules/rule_stopspeed.cpp \
+    ai/rules/rule_stopdistance.cpp \
+    ai/rules/rule_freekickdist.cpp
 
 HEADERS  += \
     etc/settings.h \
@@ -261,7 +264,10 @@ HEADERS  += \
     ai/rule.h \
     ai/rules/rule_numofplayers.h \
     ai/refstatus.h \
-    ai/rules/rules.h
+    ai/rules/rules.h \
+    ai/rules/rule_stopspeed.h \
+    ai/rules/rule_stopdistance.h \
+    ai/rules/rule_freekickdist.h
 
 FORMS    +=	ui/mainwindow.ui
 

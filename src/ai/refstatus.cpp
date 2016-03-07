@@ -49,3 +49,18 @@ bool refStatus::getRuleStatus(int id)
     return this->statusOfRules.at(id).status;
 }
 
+void refStatus::set_InValidDist(TeamColorType color, bool input)
+{
+    if(color == COLOR_BLUE)
+        this->blueInValidDist = input;
+    else
+        this->yellowInValidDist = input;
+}
+
+bool refStatus::get_InValidDist(TeamColorType color)
+{
+    if( color == COLOR_BLUE )
+        return this->blueInValidDist;
+    return this->yellowInValidDist;
+}
+

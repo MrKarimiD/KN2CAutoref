@@ -26,6 +26,7 @@ AI::AI(WorldModel *worldmodel, QString field_size, OutputBuffer *outputbuffer, Q
     playAuto = new PlayAutoReplacement(wm);
 
     rules.append(new Rule_NumOfPlayers(wm,rS));
+    rules.append(new Rule_StopDistance(wm,rS));
 }
 
 void AI::Start()
