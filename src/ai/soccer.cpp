@@ -31,9 +31,7 @@ Soccer::Soccer(QObject *parent) :
     int vport = s.Get(gm, "VisionPort").toInt();
     log += "VisionPort : " + QString::number(vport) + "\n\n";
 
-    QString scolor = s.Get("Team","Color");
-    log += "Color : " + scolor + "\n\n";
-    TeamColorType tcolor = (scolor=="Blue")?COLOR_BLUE:COLOR_YELLOW;
+    TeamColorType tcolor = COLOR_BLUE;
 
     QString sside = s.Get("Team","Side");
     log += "Side : " + sside + "\n\n";
