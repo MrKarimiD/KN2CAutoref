@@ -10,6 +10,13 @@ struct rule_status
     bool status;
 };
 
+struct trespasser
+{
+    TeamColorType color;
+    int id;
+    QString error;
+};
+
 enum playerNum
 {
     Zero,
@@ -36,6 +43,9 @@ public:
     void set_FreekickValidDist(TeamColorType color, bool input);
     bool get_FreekickValidDist(TeamColorType color);
 
+    void set_StopSpeed(TeamColorType color, bool input);
+    bool get_StopSpeed(TeamColorType color);
+
 signals:
 
 public slots:
@@ -49,6 +59,9 @@ private:
 
     bool blue_FreekickValidDist;
     bool yellow_FreekickValidDist;
+
+    bool blue_StopSpeed;
+    bool yellow_StopSpeed;
 
     QList<rule_status> statusOfRules;
 

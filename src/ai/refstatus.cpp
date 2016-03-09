@@ -79,3 +79,18 @@ bool refStatus::get_FreekickValidDist(TeamColorType color)
     return this->yellow_FreekickValidDist;
 }
 
+void refStatus::set_StopSpeed(TeamColorType color, bool input)
+{
+    if( color == COLOR_BLUE )
+        this->blue_StopSpeed = input;
+    else
+        this->yellow_StopSpeed = input;
+}
+
+bool refStatus::get_StopSpeed(TeamColorType color)
+{
+    if( color == COLOR_BLUE )
+        return this->blue_StopSpeed;
+    return this->yellow_StopSpeed;
+}
+

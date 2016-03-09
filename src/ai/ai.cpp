@@ -18,6 +18,7 @@ AI::AI(WorldModel *worldmodel, QString field_size, QObject *parent) :
     rules.append(new Rule_NumOfPlayers(wm,rS));
     rules.append(new Rule_StopDistance(wm,rS));
     rules.append(new Rule_freeKickDist(wm,rS));
+    rules.append(new Rule_StopSpeed(wm,rS));
 }
 
 void AI::Start()
